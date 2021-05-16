@@ -1,25 +1,32 @@
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+
+  componentDidMount() {
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        username: 'admin',
+        password: 'M2gu8n35D@AIKGZ&j@oEqaFF'
+      }),
+      
+    };
+
+    fetch("http://localhost/wp-json/jwt-auth/v1/token", requestOptions)
+        .then(res => res.json())
+        .then(mainResult => console.log(mainResult));
+    
+
+}
+
+  render(){
+    return (
+        <h1>fdfd</h1>
+      );
+  }
+  
 }
 
 export default App;
