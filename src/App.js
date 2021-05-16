@@ -3,6 +3,10 @@ import './App.css';
 
 class App extends Component {
 
+  state = {
+    userToken: ''
+  }
+
   componentDidMount() {
     const requestOptions = {
       method: 'POST',
@@ -23,7 +27,9 @@ class App extends Component {
 
   render(){
     return (
-        <h1>fdfd</h1>
+        <div className="LoginBlock">
+          fdfd
+        </div>
       );
   }
   
